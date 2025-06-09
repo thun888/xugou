@@ -204,7 +204,7 @@ export async function registerAgentService(
     // 通过token查找客户端
     const existingAgent = await AgentRepository.getAgentByToken(token);
 
-    if (existingAgent && existingAgent.id) {
+    if (existingAgent?.id) {
       return {
         success: true,
         message: "客户端已存在",
